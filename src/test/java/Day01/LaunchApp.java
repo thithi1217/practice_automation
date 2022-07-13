@@ -22,7 +22,7 @@ public class LaunchApp {
 
             URL appiumServer = new URL("http://localhost:4723/wd/hub");
             appiumDriver = new AndroidDriver<MobileElement>(appiumServer, desiredCaps);
-            // DEBUG PURPOSE ONLY
+            // DEBUG PURPOSE ONLY12121212
             Thread.sleep(3000);
         } catch (Exception e) {
             exception = e;
