@@ -18,8 +18,8 @@ public class LaunchApp {
             desiredCaps.setCapability("automationName", "uiautomator2");
             desiredCaps.setCapability("appPackage", "com.google.android.youtube");
             desiredCaps.setCapability("appActivity", "com.google.android.apps.youtube.app.WatchWhileActivity");
-            desiredCaps.setCapability("udid", "emulator-5554");
-
+            //desiredCaps.setCapability("udid", "emulator-5554");
+            desiredCaps.setCapability("udid", "9f7ec503ac2d");
             URL appiumServer = new URL("http://localhost:4723/wd/hub");
             appiumDriver = new AndroidDriver<MobileElement>(appiumServer, desiredCaps);
             // DEBUG PURPOSE ONLY12121212
