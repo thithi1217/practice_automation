@@ -24,9 +24,14 @@ public class TakingScreenshot {
 //            String fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("dangnhapandanh.png");
 //            FileUtils.copyFile(base64ScreenshotData, new File(fileLocation));
             //An area
-            MobileElement loginAnonymouslyForm = appiumDriver.findElement(MobileBy.id("android:id/content"));
-            File base64ScreenshotData = loginAnonymouslyForm.getScreenshotAs(OutputType.FILE);
-            String fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("dangnhapandanh-area.png");
+//            MobileElement loginAnonymouslyForm = appiumDriver.findElement(MobileBy.id("android:id/content"));
+//            File base64ScreenshotData = loginAnonymouslyForm.getScreenshotAs(OutputType.FILE);
+//            String fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("dangnhapandanh-area.png");
+//            FileUtils.copyFile(base64ScreenshotData, new File(fileLocation));
+            // An element
+            MobileElement backBtnElm = appiumDriver.findElement(MobileBy.id("com.halome.android.lite:id/back_login_phone_number"));
+            File base64ScreenshotData = backBtnElm.getScreenshotAs(OutputType.FILE);
+            String fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("buttonBack.png");
             FileUtils.copyFile(base64ScreenshotData, new File(fileLocation));
         }catch (Exception e){
             e.printStackTrace();
