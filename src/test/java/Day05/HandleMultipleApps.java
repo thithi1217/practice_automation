@@ -34,12 +34,12 @@ public class HandleMultipleApps {
             MobileElement sendCodeSMSBtn = appiumDriver.findElement(MobileBy.id("com.halome.android.lite:id/txt_sms_otp"));
 
             sendCodeSMSBtn.click();
-            Thread.sleep(3000);
+            //Thread.sleep(1000);
             List<MobileElement> enterCodeInput = appiumDriver.findElements(MobileBy.xpath("//android.widget.EditText"));
             for (MobileElement code : enterCodeInput) {
                 code.sendKeys("0");
             }
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             //5 Put the Halome Lite app into background || similar with pressing home btn
             appiumDriver.runAppInBackground(Duration.ofSeconds(-1));
 
@@ -51,14 +51,14 @@ public class HandleMultipleApps {
             //MobileElement networkinternet = appiumDriver.findElement(MobileBy.xpath("//android.widget.RelativeLayout"));
 
             ((AndroidDriver) appiumDriver).toggleWifi();
+            ((AndroidDriver) appiumDriver).toggleData();
 
             //8 Comeback to Halome Lite app
             appiumDriver.activateApp(AppPackage.halomeLite);
             //9 Take screenshot (Lost internet connection - Loading)
-            //Thread.sleep(500);
-            MobileElement loginAnonymouslyForm = appiumDriver.findElement(MobileBy.xpath("//*[@text=\"Loading\"]"));
-            File base64ScreenshotData = loginAnonymouslyForm.getScreenshotAs(OutputType.FILE);
-            String fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("loading-area.png");
+            Thread.sleep(5000);
+            File base64ScreenshotData = appiumDriver.getScreenshotAs(OutputType.FILE);
+            String fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("loading.png");
             FileUtils.copyFile(base64ScreenshotData, new File(fileLocation));
 
         }catch (Exception e){
